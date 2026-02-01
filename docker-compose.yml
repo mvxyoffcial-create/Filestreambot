@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: file_to_link_bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./logs:/app/logs
+      - ./downloads:/app/downloads
+    environment:
+      - TZ=Asia/Kolkata
+    networks:
+      - bot_network
+
+networks:
+  bot_network:
+    driver: bridge
