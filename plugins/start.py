@@ -36,7 +36,7 @@ async def start_command(client, message):
         return
     
     # Show animated hourglass emoji
-    loading_msg = await message.reply("⏳")
+    loading_msg = await message.reply("⚡")
     await asyncio.sleep(2)
     await loading_msg.delete()
     
